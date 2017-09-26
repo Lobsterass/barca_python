@@ -9,7 +9,11 @@ class Product:
 		self.tax = tax
 
 	def price_with_tax(self):
-		return self.price * self.count * self.tax
+		total = self.price * self.count *self.tax
+		if total > 500:
+			return 0.9 * total
+		else:
+			return total
 
 products = [Product(price=900, count=2, tax=1.25), Product(price=100, count=1, tax=1.06)]
 
